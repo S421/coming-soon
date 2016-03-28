@@ -1,0 +1,157 @@
+/* line 20, ../sass/style.scss */
+* {
+  box-sizing: border-box;
+}
+
+/* line 24, ../sass/style.scss */
+body {
+  box-sizing: border-box;
+  background: #303168;
+  font-family: "Proxima Nova", "Source Sans Pro", sans-serif;
+  color: white;
+  line-height: 1.25;
+  text-align: center;
+  font-weight: 200;
+  font-size: 0.667em;
+  background-image: url(../imgs/imm2016logotype_lgbg.svg);
+  background-repeat: no-repeat;
+  background-size: 120%;
+  background-position: right 50px top 4em;
+}
+
+/* line 40, ../sass/style.scss */
+.section--info {
+  width: 90%;
+  max-width: 550px;
+  margin: 11.391em auto 0 auto;
+}
+
+/* line 46, ../sass/style.scss */
+.section--logotype {
+  padding: 6em 0 4em 0;
+  background-image: url(../imgs/imm2016logotype_small.svg);
+  background-repeat: no-repeat;
+  background-size: 35%;
+  background-position: center;
+}
+
+/* line 54, ../sass/style.scss */
+h1 {
+  font-size: 3.375em;
+  font-weight: 800;
+  letter-spacing: 0.3em;
+}
+
+/* line 60, ../sass/style.scss */
+h2 {
+  font-size: 2em;
+  letter-spacing: 0.2em;
+  font-weight: 500;
+}
+
+/* line 66, ../sass/style.scss */
+h3 {
+  font-size: 2em;
+  letter-spacing: 0.1em;
+  margin: 0.3em 0;
+}
+
+/* line 76, ../sass/style.scss */
+h5 {
+  font-size: 0.667em;
+  font-weight: 200;
+}
+
+/* line 81, ../sass/style.scss */
+.section--details {
+  font-size: 1em;
+}
+
+/* line 85, ../sass/style.scss */
+.container--date, .container--location {
+  display: inline-block;
+  height: 20px;
+  margin: 0 0 0 0.667em;
+}
+
+/* line 96, ../sass/style.scss */
+.container--location p::before {
+  content: '';
+  background-image: url(../imgs/pin.svg);
+}
+
+/* line 100, ../sass/style.scss */
+.container--date p::before {
+  content: '';
+  background-image: url(../imgs/calendar.svg);
+}
+
+/* line 105, ../sass/style.scss */
+.container--date p::before, .container--location p::before {
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  margin: 0 0.2em 0 0;
+}
+
+/* line 117, ../sass/style.scss */
+form {
+  padding: 0.8em 0;
+}
+
+/* line 121, ../sass/style.scss */
+input[type=email] {
+  background: #3E3F76;
+  border: 1px solid white;
+  color: white;
+  padding: 0.667em;
+  width: 80%;
+}
+
+/* line 128, ../sass/style.scss */
+::-webkit-input-placeholder {
+  /* WebKit, Blink, Edge */
+  color: white;
+  font-style: italic;
+  font-weight: 200;
+}
+
+/* line 133, ../sass/style.scss */
+:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: white;
+  opacity: 1;
+  font-style: italic;
+  font-weight: 200;
+}
+
+/* line 139, ../sass/style.scss */
+::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: white;
+  opacity: 1;
+  font-style: italic;
+  font-weight: 200;
+}
+
+/* line 145, ../sass/style.scss */
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: white;
+  font-style: italic;
+  font-weight: 200;
+}
+
+/* line 151, ../sass/style.scss */
+input[type=submit] {
+  width: 15%;
+  padding: 0.667em;
+  border-radius: 0;
+  background: white;
+  color: #3E3F76;
+  font-family: "Proxima Nova", "Source Sans Pro", sans-serif;
+  border: 2px solid white;
+}

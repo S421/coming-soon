@@ -1,0 +1,161 @@
+@import 'normalize';
+
+// COLOUR PALETTE
+$dkblue: #303168;
+$blue: #3E3F76;
+$dkpink: #CE3A78;
+$pink: #E94B87;
+$grey: #EEE;
+$offwhite: #F2F2EB;
+
+// FONTS/FONT SIZES
+$font: "Proxima Nova","Source Sans Pro", sans-serif;
+$hdr: 2.25em;
+$subhd: 1.5em;
+$body: 1em;
+
+$ltweight: 200;
+$bldweight: 500;
+$xbldweight: 800;
+
+
+*{
+  box-sizing:border-box;
+}
+
+body{
+  box-sizing:border-box;
+  background: $dkblue; // bg color coming in with the 3D effects?
+  font-family: $font;
+  color: white;
+  line-height: 1.25;
+  text-align: center;
+  font-weight: $ltweight;
+  font-size: 0.667em;
+
+  background-image: url(../images/imm2016logotype_lgbg.svg);
+  background-repeat: no-repeat;
+  background-size: 120%;
+  background-position: right 50px top 4em;
+}
+
+.section--info{
+  width: 90%;
+  max-width: 550px;
+  margin: 11.391em auto 0 auto;
+}
+
+.section--logotype{
+  padding: 6em 0 4em 0;
+  background-image: url(../images/imm2016logotype_small.svg);
+  background-repeat: no-repeat;
+  background-size: 35%;
+  background-position: center;
+}
+
+h1{
+  font-size: 3.375em;
+  font-weight: $xbldweight;
+  letter-spacing: 0.3em;
+}
+
+h2{
+  font-size: 2em;
+  letter-spacing: 0.2em;
+  font-weight: $bldweight;
+}
+
+h3{
+  font-size: 2em;
+  letter-spacing: 0.1em;
+  margin: 0.3em 0;
+}
+
+h4{
+
+}
+
+h5{
+  font-size: 0.667em;
+  font-weight: $ltweight;
+}
+
+.section--details{
+  font-size: 1em;
+}
+
+.container--date, .container--location{
+  display: inline-block;
+  height: 20px;
+  margin: 0 0 0 0.667em;
+}
+
+.container--date p, .container--location p{
+    // top: 0;
+    // line-height: 0;
+}
+
+.container--location p::before{
+  content:'';
+  background-image: url(../images/pin.svg);
+}
+.container--date p::before{
+  content:'';
+  background-image: url(../images/calendar.svg);
+}
+
+.container--date p::before, .container--location p::before{
+  background-repeat: no-repeat;
+  background-size: contain;
+  // position: absolute;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  margin: 0 0.2em 0 0;
+}
+
+
+form{
+  padding: 0.8em 0;
+}
+
+input[type=email]{
+  background: $blue;
+  border: 1px solid white;
+  color: white;
+  padding: 0.667em;
+  width: 80%;
+}
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    white;
+    font-style: italic;
+    font-weight: $ltweight;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    white;
+   opacity:  1;
+   font-style: italic;
+   font-weight: $ltweight;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    white;
+   opacity:  1;
+   font-style: italic;
+   font-weight: $ltweight;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:    white;
+   font-style: italic;
+   font-weight: $ltweight;
+}
+
+input[type=submit]{
+  width: 15%;
+  padding: 0.667em;
+  border-radius: 0;
+  background: white;
+  color: $blue;
+  font-family: $font;
+  border: 2px solid white;
+}

@@ -38,7 +38,7 @@ const $ = gulpLoadPlugins();
 const reload = browserSync.reload;
 
 // Deploy to gh-pages
-gulp.task('deploy', ['default'], () =>
+gulp.task('deploy', ['build'], () =>
   gulp.src('dist')
     .pipe($.subtree({message: ':rocket:'}))
     .pipe($.clean())
@@ -191,7 +191,7 @@ gulp.task('default', ['scripts', 'styles'], () => {
 });
 
 // Build and serve the output from the dist build
-gulp.task('serve:dist', ['default'], () =>
+gulp.task('serve:dist', ['build'], () =>
   browserSync({
     notify: false,
     logPrefix: 'WSK',

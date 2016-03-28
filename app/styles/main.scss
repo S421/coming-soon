@@ -33,16 +33,13 @@ body{
   font-weight: $ltweight;
   font-size: 0.667em;
 
-  background-image: url(../images/imm2016logotype_lgbg.svg);
-  background-repeat: no-repeat;
-  background-size: 120%;
-  background-position: right 50px top 4em;
+
 }
 
 .section--info{
   width: 90%;
   max-width: 550px;
-  margin: 11.391em auto 0 auto;
+  /*margin: 11.391em auto 0 auto;*/ /*comment by jason*/
 }
 
 .section--logotype{
@@ -158,4 +155,18 @@ input[type=submit]{
   color: $blue;
   font-family: $font;
   border: 2px solid white;
+}
+
+
+/*jason modify*/
+#bg--threejs{
+  position: relative;
+  .section--info{
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left:0;
+    right: 0;
+    margin:11.391em  auto;
+  }
 }

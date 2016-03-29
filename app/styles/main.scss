@@ -14,8 +14,8 @@ $hdr: 2.25em;
 $subhd: 1.5em;
 $body: 1em;
 
-$ltweight: 400;
-$bldweight: 500;
+$ltweight: 300;
+$bldweight: 400;
 
 
 *{
@@ -43,6 +43,9 @@ body{
   left:0;
   right: 0;
   margin: 5em auto;
+  @media screen and (min-width: 1500px) {
+    margin: 15em auto;
+  }
 }
 
 .section--logotype{
@@ -57,18 +60,33 @@ h1{
   font-size: 3.375em;
   font-weight: $bldweight;
   letter-spacing: 0.3em;
+  @media screen and (max-width: 600px) {
+    font-size: 2.4em;
+  }
+  @media screen and (max-width: 370px) {
+    letter-spacing: 0.1em;
+  }
+  @media screen and (min-width: 1500px) {
+    font-size: 4em;
+  }
 }
 
 h2{
   font-size: 2em;
   letter-spacing: 0.2em;
   font-weight: $ltweight;
+  @media screen and (max-width: 600px) {
+    font-size: 1.6em;
+  }
 }
 
 h3{
   font-size: 2em;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.2em;
   margin: 0.8em 0;
+  @media screen and (max-width: 600px) {
+    font-size: 1.6em;
+  }
 }
 
 h5{
@@ -96,6 +114,9 @@ a {
   display: inline-block;
   height: 20px;
   margin: 0 0 0 0.667em;
+  @media screen and (max-width: 600px) {
+    margin-bottom: 0.667em;
+  }
 }
 
 .container--location p::before{
@@ -122,6 +143,9 @@ form{
   display: flex;
   flex-direction: row;
   padding: 0.8em 0;
+  @media screen and (max-width: 400px) {
+    display: block;
+  }
 }
 
 input[type=email]{
@@ -132,6 +156,9 @@ input[type=email]{
   padding: 0.667em;
   width: 100%;
   font-size: 1em;
+  @media screen and (max-width: 400px) {
+    border-radius: 5px 5px 0 0;
+  }
 }
 ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
     color: white;
@@ -157,7 +184,7 @@ input[type=email]{
 }
 
 input[type=submit]{
-  padding: 0.667em 1.667em;
+  padding: 0.4em 1.667em;
   border-radius: 0 5px 5px 0;
   background: white;
   color: $blue;
@@ -168,6 +195,16 @@ input[type=submit]{
   &:hover {
     color: $pink;
   }
+  @media screen and (max-width: 400px) {
+    width: 100%;
+    border-radius: 0 0 5px 5px;
+  }
+}
+
+.line-break {
+  @media screen and (max-width: 500px) {
+    display: block;
+  }
 }
 
 .social--icon {
@@ -176,5 +213,5 @@ input[type=submit]{
 }
 
 #bg--threejs{
-  position: absolute;
+  position: fixed;
 }

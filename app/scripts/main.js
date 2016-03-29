@@ -78,8 +78,108 @@
       console.error('Error during service worker registration:', e);
     });
   }
-
- 
-
-  
+  createThreeJsBg();
 })();
+
+function createThreeJsBg(){
+  /*scene*/
+  var scene = new THREE.Scene();
+  scene.fog = new THREE.FogExp2( "red", 0.0003);
+  /*camera*/
+  var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000)
+  /*renderer*/
+  var renderer = new THREE.WebGLRenderer({antialias:true}); //create canvas
+  renderer.setSize(window.innerWidth, window.innerHeight); //set canvas size;
+  renderer.setClearColor(new THREE.Color(0x292a5d, 1.0));// set rendering background color
+  document.getElementById("bg--threejs").appendChild(renderer.domElement); // pass in _canvas
+  window.addEventListener("resize", function(){
+    renderer.setSize(window.innerWidth, window.innerHeight);
+  })
+  var cloud;
+  var cloud2;
+  var cloud3;
+  var cloud4;
+  function createPointCloud(arg){
+      var texture = new THREE.TextureLoader().load(arg.img);
+      var geom = new THREE.Geometry();
+      var material = new THREE.PointsMaterial({
+        size: 11,
+        transparent: true,
+        opacity: 1,
+        map: texture,
+        sizeAttenuation: false,
+        color: 0xffffff,
+        blending: THREE.AdditiveBlending,
+      })
+      var num= arg.num; 
+      var range = 500;
+      for (var i = 0; i < num; i++) {
+        var particle = new THREE.Vector3(
+          Math.random()*range-range/2,
+          Math.random()*range-range/2,
+          Math.random()*range-range/2
+          )
+        geom.vertices.push(particle);
+      };
+      return {
+        geom:geom,
+        material :material 
+      }
+  } 
+  var a = createPointCloud({img:'images/threejs/6-06.png',num:11,size:100,})
+  cloud = new THREE.Points(a.geom, a.material);
+  scene.add(cloud);
+  var b = createPointCloud({img:"images/threejs/7-07.png",num:22,size:100,})
+  cloud2 = new THREE.Points(b.geom, b.material);
+  scene.add(cloud2);
+  var c = createPointCloud({img:"images/threejs/8-08.png",num:30,size:100,})
+  cloud3 = new THREE.Points(c.geom, c.material);
+  scene.add(cloud3);
+  function createPointCloud4(img){
+      var texture = new THREE.TextureLoader().load(img);
+      var geom = new THREE.Geometry();
+      var material = new THREE.PointsMaterial({
+        size: 7,
+        transparent:true,
+        opacity:0.2,
+        map: texture,
+        sizeAttenuation:true,
+        color:0xffffff,
+      })
+      var num= 1; 
+      var range = 1;
+      for (var i = 0; i < num; i++) {
+        var particle = new THREE.Vector3(
+          Math.random()*range-range/2,
+         0.4,
+          Math.random()*range-range/2-10
+          )
+        geom.vertices.push(particle);
+      };
+      geom.applyMatrix(new THREE.Matrix4().makeTranslation(-1,-1,7));
+      cloud4 = new THREE.Points(geom, material);
+      cloud4.name ="pointCloud";
+      scene.add(cloud4);
+  } 
+  createPointCloud4("images/imm2016logotype_lgbg.svg")
+  var light = new THREE.PointLight(0xffffff);
+  light.lookAt(scene.position);
+  light.position.set(40,170,11);
+  light.castShadow = true;
+  scene.add(light);
+  var light = new THREE.AmbientLight( 0x404040 ); // soft white light
+  scene.add( light );
+  console.log(cloud.geometry.vertices);
+  function render() {
+        cloud.rotation.x += 0.0001;
+        cloud.rotation.z += 0.001;
+        cloud2.rotation.x += 0.0008;
+        cloud2.rotation.z += 0.002;
+        cloud3.rotation.y += 0.0008;
+        cloud3.rotation.z += 0.002;
+        cloud4.rotation.z += 0.002;
+        requestAnimationFrame( render );
+        renderer.render( scene, camera );
+  }
+  render();
+}

@@ -24,6 +24,7 @@ $xbldweight: 800;
 }
 
 body{
+  position: relative;
   box-sizing:border-box;
   background: $dkblue; // bg color coming in with the 3D effects?
   font-family: $font;
@@ -39,7 +40,14 @@ body{
 .section--info{
   width: 90%;
   max-width: 550px;
-  /*margin: 11.391em auto 0 auto;*/ /*comment by jason*/
+  position: absolute;
+  z-index: 10; 
+  top:0;
+  bottom:0;
+  left:0;
+  right: 0;
+  margin:11.391em auto;
+ 
 }
 
 .section--logotype{
@@ -123,6 +131,7 @@ input[type=email]{
   color: white;
   padding: 0.667em;
   width: 80%;
+  /*z-index: 1000;*/
 }
 ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
     color:    white;
@@ -160,13 +169,14 @@ input[type=submit]{
 
 /*jason modify*/
 #bg--threejs{
-  position: relative;
-  .section--info{
+  position: absolute;
+  
+/*  .section--info{
     position: absolute;
     top:0;
     bottom: 0;
     left:0;
     right: 0;
     margin:11.391em  auto;
-  }
+  }*/
 }

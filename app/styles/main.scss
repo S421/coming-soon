@@ -54,6 +54,9 @@ body{
   background-repeat: no-repeat;
   background-size: 35%;
   background-position: center;
+  @media screen and (max-width: 600px) {
+    padding: 2.4em 0;
+  }
 }
 
 h1{
@@ -146,6 +149,10 @@ form{
   @media screen and (max-width: 400px) {
     display: block;
   }
+}
+
+input {
+  -webkit-appearance: none;
 }
 
 input[type=email]{

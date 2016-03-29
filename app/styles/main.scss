@@ -9,32 +9,28 @@ $grey: #EEE;
 $offwhite: #F2F2EB;
 
 // FONTS/FONT SIZES
-$font: "Proxima Nova","Source Sans Pro", sans-serif;
+$font: "Roboto", sans-serif;
 $hdr: 2.25em;
 $subhd: 1.5em;
 $body: 1em;
 
-$ltweight: 200;
+$ltweight: 400;
 $bldweight: 500;
-$xbldweight: 800;
 
 
 *{
-  box-sizing:border-box;
+  box-sizing: border-box;
 }
 
 body{
   position: relative;
-  box-sizing:border-box;
   background: $dkblue; // bg color coming in with the 3D effects?
   font-family: $font;
   color: white;
   line-height: 1.25;
   text-align: center;
   font-weight: $ltweight;
-  font-size: 0.667em;
-
-
+  font-size: 1em;
 }
 
 .section--info{
@@ -46,8 +42,7 @@ body{
   bottom:0;
   left:0;
   right: 0;
-  margin:11.391em auto;
- 
+  margin: 5em auto;
 }
 
 .section--logotype{
@@ -60,24 +55,20 @@ body{
 
 h1{
   font-size: 3.375em;
-  font-weight: $xbldweight;
+  font-weight: $bldweight;
   letter-spacing: 0.3em;
 }
 
 h2{
   font-size: 2em;
   letter-spacing: 0.2em;
-  font-weight: $bldweight;
+  font-weight: $ltweight;
 }
 
 h3{
   font-size: 2em;
   letter-spacing: 0.1em;
-  margin: 0.3em 0;
-}
-
-h4{
-
+  margin: 0.8em 0;
 }
 
 h5{
@@ -95,11 +86,6 @@ h5{
   margin: 0 0 0 0.667em;
 }
 
-.container--date p, .container--location p{
-    // top: 0;
-    // line-height: 0;
-}
-
 .container--location p::before{
   content:'';
   background-image: url(../images/pin.svg);
@@ -112,7 +98,6 @@ h5{
 .container--date p::before, .container--location p::before{
   background-repeat: no-repeat;
   background-size: contain;
-  // position: absolute;
   display: inline-block;
   width: 20px;
   height: 20px;
@@ -122,19 +107,22 @@ h5{
 
 
 form{
+  display: flex;
+  flex-direction: row;
   padding: 0.8em 0;
 }
 
 input[type=email]{
   background: $blue;
   border: 1px solid white;
+  border-radius: 5px 0 0 5px;
   color: white;
   padding: 0.667em;
-  width: 80%;
-  /*z-index: 1000;*/
+  width: 100%;
+  font-size: 1em;
 }
 ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
-    color:    white;
+    color: white;
     font-style: italic;
     font-weight: $ltweight;
 }
@@ -157,26 +145,19 @@ input[type=email]{
 }
 
 input[type=submit]{
-  width: 15%;
-  padding: 0.667em;
-  border-radius: 0;
+  padding: 0.667em 1.667em;
+  border-radius: 0 5px 5px 0;
   background: white;
   color: $blue;
   font-family: $font;
+  font-size: 1em;
   border: 2px solid white;
+  cursor: pointer;
+  &:hover {
+    color: $pink;
+  }
 }
 
-
-/*jason modify*/
 #bg--threejs{
   position: absolute;
-  
-/*  .section--info{
-    position: absolute;
-    top:0;
-    bottom: 0;
-    left:0;
-    right: 0;
-    margin:11.391em  auto;
-  }*/
 }

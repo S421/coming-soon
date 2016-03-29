@@ -76,6 +76,18 @@ h5{
   font-weight: $ltweight;
 }
 
+a {
+  color: white;
+  text-decoration: none;
+  &:hover {
+    border-bottom: 2px solid white;
+  }
+  &.social--icon:hover {
+    opacity: 0.6;
+    border-bottom: 0;
+  }
+}
+
 .section--details{
   font-size: 1em;
 }
@@ -156,6 +168,11 @@ input[type=submit]{
   &:hover {
     color: $pink;
   }
+}
+
+.social--icon {
+  display: inline-block;
+  margin: 1.6em 0.4em;
 }
 
 #bg--threejs{

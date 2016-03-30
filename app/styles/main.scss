@@ -151,7 +151,7 @@ form{
   display: flex;
   flex-direction: row;
   padding: 0.8em 0;
-  @media screen and (max-width: 400px) {
+  @media screen and (max-width: 500px) {
     display: block;
   }
 }
@@ -168,7 +168,7 @@ input[type=email]{
   padding: 0.667em;
   width: 100%;
   font-size: 1em;
-  @media screen and (max-width: 400px) {
+  @media screen and (max-width: 500px) {
     border-radius: 5px 5px 0 0;
   }
 }
@@ -204,10 +204,11 @@ input[type=submit]{
   font-size: 1em;
   border: 2px solid white;
   cursor: pointer;
+  text-align: center;
   &:hover {
     color: $pink;
   }
-  @media screen and (max-width: 400px) {
+  @media screen and (max-width: 500px) {
     width: 100%;
     border-radius: 0 0 5px 5px;
   }

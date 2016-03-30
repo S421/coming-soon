@@ -70,14 +70,15 @@
     
           <h3>COMING SOON!</h3>
     
-          <p><span class="line-break">We're working on something amazing!</span> Sign up &amp; get notified!</p>
+          <p id="form-hide"><span class="line-break">We're working on something amazing!</span> Sign up &amp; get notified!</p>
     
-          <form action="//sheridancollege.us5.list-manage.com/subscribe/post?u=0f989d38861f906f55f887ece&amp;id=ba049562ad" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-            <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+          <form action="//sheridancollege.us5.list-manage.com/subscribe/post-json?u=0f989d38861f906f55f887ece&amp;id=ba049562ad&c=?" method="get" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+            <input type="email" value="" name="EMAIL" class="email email-input" id="mce-EMAIL" placeholder="email address" required>
             <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_0f989d38861f906f55f887ece_ba049562ad" tabindex="-1" value=""></div>
             <input type="submit" value="Submit" name="subscribe" id="mc-embedded-subscribe" class="button">
           </form>
           
+          <div id="form-response"></div>
           <footer>
             <!-- Twitter -->
             <a class="social--icon" href="https://twitter.com/SheridanIMM" target="_blank">
@@ -96,7 +97,7 @@
       </section>
       <main id="bg--threejs"></main>
 
-    <!-- Jason code  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/three.js/r74/three.min.js"></script>
     <!-- build:js scripts/main.min.js -->
     <script src="scripts/main.js"></script>

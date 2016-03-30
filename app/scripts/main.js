@@ -79,6 +79,44 @@
     });
   }
   createThreeJsBg();
+
+  // Ajax form submit
+
+  // validate input
+  function validateEmail( email ) {
+    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test( email );
+  }
+  var form = $("form");
+  // submit form
+  form.submit( function(evt) {
+    evt.preventDefault();
+    var input = $(".email-input").val();
+
+    // Test if email is validated
+    if ( validateEmail( input ) ) {
+      $.ajax({
+        url: form.attr("action"),
+        method: form.attr("method"),
+        data: form.serialize(),
+        dataType: 'json',
+        contentType: "application/json; charset=utf-8"
+      })
+      .done(function(data) {
+        if ( data.result == "success" ) {
+          form.hide();
+          $("#form-hide").hide();
+          $("#form-response").text("");
+          $("#form-response").append("<h3>Thank you!</h3><p>Check your inbox to confirm your subscription.</p>");
+        } else {
+          $("#form-response").text("Something went wrong, give it another shot!");
+        }
+      });
+    } else {
+      $("#form-response").text("Invalid email, give it another shot!");
+    }
+  })
+
 })();
 
 function createThreeJsBg(){

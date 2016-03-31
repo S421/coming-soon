@@ -207,7 +207,6 @@ function createThreeJsBg(){
   scene.add(light);
   var light = new THREE.AmbientLight( 0x404040 ); // soft white light
   scene.add( light );
-  console.log(cloud.geometry.vertices);
   function render() {
         cloud.rotation.x += 0.0001;
         cloud.rotation.z += 0.001;
